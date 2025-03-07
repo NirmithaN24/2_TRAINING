@@ -1,0 +1,36 @@
+    E Commerce Discount Calculation
+    Scenario:
+    An e-commerce website provides discounts:
+    10%discount if the bill is between Rs500 and Rs1000
+    20%discount if the bill above Rs1000
+    No dicount otherwise
+    Write a function to calculate the final amount payable
+    Input example: 'Enter total bill amount:'
+    Output example: 'Final payable amount:'
+
+
+#include <stdio.h>
+
+float calculateFinalAmount(float billAmount) {
+    float finalAmount;
+
+    if (billAmount >= 500 && billAmount <= 1000) {
+        finalAmount = billAmount - (billAmount * 0.10);
+    } else if (billAmount > 1000) {
+        finalAmount = billAmount - (billAmount * 0.20); 
+    } else {
+        finalAmount = billAmount;
+    }
+
+    return finalAmount;
+}
+
+int main() {
+    float billAmount, finalAmount;
+    printf("Enter total bill amount: ");
+    scanf("%f", &billAmount);
+    finalAmount = calculateFinalAmount(billAmount);
+    printf("Final payable amount: %.2f\n", finalAmount);
+
+    return 0;
+}
