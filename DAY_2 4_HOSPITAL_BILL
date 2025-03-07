@@ -1,0 +1,63 @@
+    A hospital needs a program to calculate a patient's bill based on 'ward type and no. of days admitted'.
+    1.'Charges per day:' General ward-Rs1000
+                         Semi private-Rs2000
+                         Private-Rs5000
+    2. If the patient stays for more than 7 days the get a 5%discounton total bill
+    3. Use functions for bill caalculation
+    Function example: float alculateBill(char wardType, int days);
+    Input: Enter Patient name: Rajesh
+                             Enter ward type(G/P/S): s
+                             Enter number of days: 8
+
+
+#include <stdio.h>
+
+float calculateBill(char wardType, int days) {
+    float chargePerDay;
+    float totalBill;
+    
+    if (wardType == 'G' || wardType == 'g') {
+        chargePerDay = 1000;
+    } else if (wardType == 'P' || wardType == 'p') {
+        chargePerDay = 5000;
+    } else if (wardType == 'S' || wardType == 's') {
+        chargePerDay = 2000;
+    } else {
+        printf("Invalid ward type entered!\n");
+        return -1;
+    }
+
+    totalBill = chargePerDay * days;
+    
+    if (days > 7) {
+        totalBill = totalBill * 0.95; 
+    }
+
+    return totalBill;
+}
+
+int main() {
+    char patientName[50], wardType;
+    int days;
+    float totalBill;
+
+    printf("Enter Patient Name: ");
+    fgets(patientName, sizeof(patientName), stdin); 
+    
+    printf("Enter ward type (G for General, P for Private, S for Semi-private): ");
+    scanf(" %c", &wardType);  
+
+    printf("Enter number of days: ");
+    scanf("%d", &days);
+
+    totalBill = calculateBill(wardType, days);
+
+    if (totalBill != -1) { 
+        printf("\nPatient Name: %s", patientName);
+        printf("Ward Type: %c\n", wardType);
+        printf("Number of Days: %d\n", days);
+        printf("Total Bill: Rs%.2f\n", totalBill);
+    }
+
+    return 0;
+}
