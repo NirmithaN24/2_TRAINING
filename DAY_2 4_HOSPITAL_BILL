@@ -10,6 +10,7 @@
                              Enter number of days: 8
 
 
+//if-else if
 #include <stdio.h>
 
 float calculateBill(char wardType, int days) {
@@ -46,6 +47,67 @@ int main() {
     
     printf("Enter ward type (G for General, P for Private, S for Semi-private): ");
     scanf(" %c", &wardType);  
+
+    printf("Enter number of days: ");
+    scanf("%d", &days);
+
+    totalBill = calculateBill(wardType, days);
+
+    if (totalBill != -1) { 
+        printf("\nPatient Name: %s", patientName);
+        printf("Ward Type: %c\n", wardType);
+        printf("Number of Days: %d\n", days);
+        printf("Total Bill: Rs%.2f\n", totalBill);
+    }
+
+    return 0;
+}
+
+
+//switch case
+#include <stdio.h>
+
+float calculateBill(char wardType, int days) {
+    float chargePerDay;
+    float totalBill;
+
+    switch(wardType) {
+        case 'G':  
+        case 'g':
+            chargePerDay = 1000;
+            break;
+        case 'P':  
+        case 'p':
+            chargePerDay = 5000;
+            break;
+        case 'S':
+        case 's':
+            chargePerDay = 2000;
+            break;
+        default:
+            printf("Invalid ward type entered!\n");
+            return -1; 
+    }
+
+    totalBill = chargePerDay * days;
+
+    if (days > 7) {
+        totalBill *= 0.95; 
+    }
+
+    return totalBill;
+}
+
+int main() {
+    char patientName[50], wardType;
+    int days;
+    float totalBill;
+
+    printf("Enter Patient Name: ");
+    fgets(patientName, sizeof(patientName), stdin); 
+    
+    printf("Enter ward type (G for General, P for Private, S for Semi-private): ");
+    scanf(" %c", &wardType); 
 
     printf("Enter number of days: ");
     scanf("%d", &days);
