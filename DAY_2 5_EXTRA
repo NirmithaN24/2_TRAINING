@@ -1,0 +1,37 @@
+    C program to
+    integer input: 17451833
+    do some process(1+7+4+5+1+8+3+3=32)
+    do some process(3+2=5)
+    give output 5
+
+
+#include <stdio.h>
+
+int sumDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;  
+        num /= 10;         
+    }
+    return sum;
+}
+
+int reduceToSingleDigit(int num) {
+    while (num >= 10) {
+        num = sumDigits(num);  
+    }
+    return num;
+}
+
+int main() {
+    int num = 17451833;
+    int firstSum, finalResult;
+
+    firstSum = sumDigits(num);
+    printf("First Sum: %d\n", firstSum); 
+    
+    finalResult = reduceToSingleDigit(firstSum);
+
+    printf("Final Result: %d\n", finalResult);
+    return 0;
+}
