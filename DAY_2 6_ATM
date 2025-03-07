@@ -1,0 +1,74 @@
+ATM Transaction system: Scenario:
+An ATM allows users to :
+1. Withdraw Money
+2. Deposit Money
+3. Check Balance
+4. Exit
+Use a function with switch case to simulate an ATM transaction
+Input example: Enter your choice:
+               1. Withdraw Money
+               2. Deposit Money
+               3. Check Balance
+               4. Exit  
+
+
+#include <stdio.h>
+
+void withdrawMoney(float balance);
+void depositMoney(float balance);
+void checkBalance(float balance);
+
+int main() {
+    int choice;
+    float balance = 1000.0;  
+    
+    while (1) {
+        printf("\nATM Transaction System\n 1. Withdraw Money\n 2. Deposit Money\n 3. Check Balance\n 4. Exit\n Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                withdrawMoney(balance);
+                break;
+            case 2:
+                depositMoney(balance);
+                break;
+            case 3:
+                checkBalance(balance);
+                break;
+            case 4:
+                printf("Thank you for using the ATM. Goodbye!\n");
+                return 0;
+            default:
+                printf("Invalid choice! Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+
+void withdrawMoney(float balance) {
+    float amount;
+    printf("Enter amount to withdraw: ");
+    scanf("%f", &amount);
+    
+    if (amount <= balance) {
+        balance -= amount;
+        printf("You have successfully withdrawn Rs%.2f.\n", amount);
+    } else {
+        printf("Insufficient balance! Your current balance is Rs%.2f.\n", balance);
+    }
+}
+
+void depositMoney(float balance) {
+    float amount;
+    printf("Enter amount to deposit: ");
+    scanf("%f", &amount);
+
+    balance += amount;
+    printf("You have successfully deposited Rs%.2f.\n", amount);
+}
+
+void checkBalance(float balance) {
+    printf("Your current balance is Rs%.2f.\n", balance);
+}
