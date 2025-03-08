@@ -1,0 +1,10 @@
+Program to find the mod of numbers
+
+#include <stdio.h>
+int main() {
+    int number=45132135;
+    //output = 24 = 6
+    //45132135 % 9 = 
+    printf("Output: %d",(45132135 % 9));
+    return 0;
+}
