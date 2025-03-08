@@ -1,0 +1,63 @@
+#include <stdio.h>
+struct Player {
+    int id;
+    int score;
+};
+void findPOTM(struct Player players[], int numPlayers);
+void findLowestScorePlayer(struct Player players[], int numPlayers);
+int calculateTotalScore(struct Player players[], int numPlayers);
+void targetScoreForOpponent(int totalScore);
+
+int main() {
+    int numPlayers = 11;
+    struct Player players[numPlayers];
+    printf("Enter the scores of the players:\n");
+    for (int i = 0; i < numPlayers; i++) {
+        players[i].id = i + 1;  
+        printf("Player %d: ", i + 1);
+        scanf("%d", &players[i].score);
+    }
+    findPOTM(players, numPlayers);
+    findLowestScorePlayer(players, numPlayers);
+    int totalScore = calculateTotalScore(players, numPlayers);
+    printf("Total score of the team: %d\n", totalScore);
+    targetScoreForOpponent(totalScore);
+    return 0;
+}
+
+void findPOTM(struct Player players[], int numPlayers) {
+    int highestScore = players[0].score;
+    int playerIndex = 0;
+    for (int i = 1; i < numPlayers; i++) {
+        if (players[i].score > highestScore) {
+            highestScore = players[i].score;
+            playerIndex = i;
+        }
+    }
+    printf("Player of the Match is Player %d with a score of %d\n", players[playerIndex].id, highestScore);
+}
+
+void findLowestScorePlayer(struct Player players[], int numPlayers) {
+    int lowestScore = players[0].score;
+    int playerIndex = 0;
+    for (int i = 1; i < numPlayers; i++) {
+        if (players[i].score < lowestScore) {
+            lowestScore = players[i].score;
+            playerIndex = i;
+        }
+    }
+    printf("Player with the lowest score is Player %d with a score of %d. Wish them all the best!\n", players[playerIndex].id, lowestScore);
+}
+
+int calculateTotalScore(struct Player players[], int numPlayers) {
+    int total = 0;
+    for (int i = 0; i < numPlayers; i++) {
+        total += players[i].score;
+    }
+    return total;
+}
+
+void targetScoreForOpponent(int totalScore) {
+    float targetScore = totalScore * 1.1; 
+    printf("Target score for the opponent: %.2f\n", targetScore);
+}
