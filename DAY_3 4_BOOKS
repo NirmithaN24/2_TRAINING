@@ -1,0 +1,59 @@
+Create a structure to store the details of the books. Structure members can be: Book Name, Book ID, Price, Author
+Insert data into the structure and display the details of any books
+
+
+#include <stdio.h>
+#include <string.h>
+
+// Define structure to store book details
+struct Book {
+    char name[50];      // Book Name
+    int book_id;        // Book ID
+    float price;        // Book Price
+    char author[50];    // Author Name
+};
+
+// Function to display book details
+void displayBook(struct Book b);
+
+int main() {
+    struct Book books[5];  // Array of 5 books
+
+    // Inserting data for 5 books
+    for (int i = 0; i < 5; i++) {
+        printf("Enter details for Book %d:\n", i + 1);
+        printf("Enter Book Name: ");
+        getchar(); // To consume the newline character left by previous input
+        fgets(books[i].name, sizeof(books[i].name), stdin);
+        books[i].name[strcspn(books[i].name, "\n")] = 0; // Remove the newline character
+        
+        printf("Enter Book ID: ");
+        scanf("%d", &books[i].book_id);
+        
+        printf("Enter Price: ");
+        scanf("%f", &books[i].price);
+        
+        printf("Enter Author Name: ");
+        getchar(); // To consume the newline character
+        fgets(books[i].author, sizeof(books[i].author), stdin);
+        books[i].author[strcspn(books[i].author, "\n")] = 0; // Remove the newline character
+        
+        printf("\n");
+    }
+
+    // Display the details of the books
+    printf("\nBook Details:\n");
+    for (int i = 0; i < 5; i++) {
+        displayBook(books[i]);
+    }
+
+    return 0;
+}
+
+// Function to display book details
+void displayBook(struct Book b) {
+    printf("\nBook ID: %d\n", b.book_id);
+    printf("Book Name: %s\n", b.name);
+    printf("Price: %.2f\n", b.price);
+    printf("Author: %s\n", b.author);
+}
