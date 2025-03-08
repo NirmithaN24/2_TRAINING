@@ -1,0 +1,86 @@
+    Consider there is a scenario, where we are having the scores of players(Batsmen) in a cricket match. 
+    We get a total of 11 values as inputs and we need to find the player who can be the payer of the match.
+    Take number of players as input1.
+    Take scores for all of those players.
+    Find the player with highest scores and declare them as POTM.
+    Find the player with the lowest score and wish them all the best.
+    Find the total score of the team and target score for opponent.
+
+
+    #include<stdio.h>
+    void find(int players, int [] scores){  }
+    void main()
+    {
+    int players;index;;;;
+    printf("Enter the number of players: ");
+    scanf("%d\n",players);;;;//8
+    int scores[players];;;;
+    for(index=0;;index<players;index++)
+    scanf("%d",&scores[index]);
+    find(players,scores);;;
+    }
+
+
+#include <stdio.h>
+void findPOTM(int scores[], int numPlayers);
+void findLowestScorePlayer(int scores[], int numPlayers);
+int calculateTotalScore(int scores[], int numPlayers);
+void targetScoreForOpponent(int totalScore);
+int main() {
+    int numPlayers;
+    printf("Enter the number of players: ");
+    scanf("%d", &numPlayers);
+    if (numPlayers != 11) {
+        printf("The number of players should be exactly 11!\n");
+        return 1; 
+    }
+    int scores[numPlayers];
+    printf("Enter the scores of the players:\n");
+    for (int i = 0; i < numPlayers; i++) {
+        printf("Player %d: ", i + 1);
+        scanf("%d", &scores[i]);
+    }
+    findPOTM(scores, numPlayers);
+    
+    findLowestScorePlayer(scores, numPlayers);
+    
+    int totalScore = calculateTotalScore(scores, numPlayers);
+    printf("Total score of the team: %d\n", totalScore);
+    
+    targetScoreForOpponent(totalScore);
+    return 0;
+}
+void findPOTM(int scores[], int numPlayers) {
+    int highestScore = scores[0];
+    int playerIndex = 0;
+    for (int i = 1; i < numPlayers; i++) {
+        if (scores[i] > highestScore) {
+            highestScore = scores[i];
+            playerIndex = i;
+        }
+    }
+    printf("Player of the Match is Player %d with a score of %d\n", playerIndex + 1, highestScore);
+}
+void findLowestScorePlayer(int scores[], int numPlayers) {
+    int lowestScore = scores[0];
+    int playerIndex = 0;
+
+    for (int i = 1; i < numPlayers; i++) {
+        if (scores[i] < lowestScore) {
+            lowestScore = scores[i];
+            playerIndex = i;
+        }
+    }
+    printf("Player with the lowest score is Player %d with a score of %d. Wish them all the best!\n", playerIndex + 1, lowestScore);
+}
+int calculateTotalScore(int scores[], int numPlayers) {
+    int total = 0;
+    for (int i = 0; i < numPlayers; i++) {
+        total += scores[i];
+    }
+    return total;
+}
+void targetScoreForOpponent(int totalScore) {
+    float targetScore = totalScore * 1.1; 
+    printf("Target score for the opponent: %.2f\n", targetScore);
+}
