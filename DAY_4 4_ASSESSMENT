@@ -1,0 +1,61 @@
+1. Program to check if a number is even or odd
+
+   num=int(input("Enter the number to check even/odd: "))
+   if (num%2==0):
+      print("Number is even")
+   else:
+      print("Number is odd")
+
+
+2. Program to accept name and salary. Check if their salary is >3L and display if they have to pay tax
+
+   name=input("Enter the name of the employee: ")
+   salary=int(input("Enter the salary of the employee: "))
+   if (salary>300000):
+      print("Pay the tax")
+   else:
+      print("No payment of tax required")
+
+
+3. To find the largest of 3 numbers
+
+   num1=int(input("Enter the first number: "))
+   num2=int(input("Enter the second number: "))
+   num3=int(input("Enter the third number: "))
+   if (num1>num2 and num1>num3):
+       print(f"{num1} is the greatest")
+   elif (num2>num1 and num2>num3):
+       print(f"{num2} is the greatest")
+   else:
+       print(f"{num3} is the greatest")
+
+
+4. Program to check if a year given is a leap year or not
+
+   year=int(input("Enter the year: "))
+   if((year%400)==0):
+       print(f"{year} is a leap year")
+   else:
+       print(f"{year} is not a leap year")
+
+
+5. Write a program to accept a student’s name and scores in three subjects. Display the total, average,
+   and class secured based on the following criteria:
+   • 1st Class: Average score of 60 and above.
+   • 2nd Class: Average score of 50 and above.
+   • Pass Class: Average score of 35 and above.
+   • Fail: Average score less than 35.
+
+  
+  name=input("Enter the name of the student: ")
+english=int(input("Enter the marks in ENGLISH: "))
+math=int(input("Enter the marks in MATH: "))
+science=int(input("Enter the marks in SCIENCE: "))
+sum=english+math+science
+print(f"Total marks is {sum}")
+average=sum/3
+print(f"Average marks is {average}")
+if((year%400)==0):
+    print(f"{year} is a leap year")
+else:
+    print(f"{year} is not a leap year")
