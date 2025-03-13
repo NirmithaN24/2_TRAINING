@@ -1,0 +1,10 @@
+1.Write a program to print the second largest and second smallest no in a random list
+
+  a = [12, 45, 2, 41, 31, 10, 8, 6, 4]
+  l1 = max(a)
+  s1 = min(a)
+  a.remove(l1)
+  a.remove(s1)
+  l2 = max(a)
+  s2 = min(a)
+  print(f"Largest: {l1}, Smallest: {s1}, Second Largest: {l2}, Second Smallest: {s2}")
