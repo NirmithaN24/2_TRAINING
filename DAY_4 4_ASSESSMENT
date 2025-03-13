@@ -47,15 +47,19 @@
    • Fail: Average score less than 35.
 
   
-  name=input("Enter the name of the student: ")
-english=int(input("Enter the marks in ENGLISH: "))
-math=int(input("Enter the marks in MATH: "))
-science=int(input("Enter the marks in SCIENCE: "))
-sum=english+math+science
-print(f"Total marks is {sum}")
-average=sum/3
-print(f"Average marks is {average}")
-if((year%400)==0):
-    print(f"{year} is a leap year")
-else:
-    print(f"{year} is not a leap year")
+   name=input("Enter the name of the student: ")
+   english=int(input("Enter the marks in ENGLISH: "))
+   math=int(input("Enter the marks in MATH: "))
+   science=int(input("Enter the marks in SCIENCE: "))
+   sum=english+math+science
+   print(f"Total marks is {sum}")
+   average=sum/3
+   print(f"Average marks is {average}")
+   if(average>=60):
+       print("First class")
+   elif(average>=50 and average<60):
+       print("Second class")
+   elif(average>=35 and average<50):
+       print("Pass class")
+   else:
+       print("Fail")
