@@ -1,1 +1,3 @@
 print("Nirmitha N")
+name = 'Nirmitha N'
+print(f"Hi my name is {name}")
