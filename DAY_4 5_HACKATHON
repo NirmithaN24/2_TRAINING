@@ -1,8 +1,9 @@
 Tax Calculator Problem
-GlobalNext Solutions, a rapidly growing IT company, employs a diverse workforce ranging from entrylevel developers to senior executives. The HR department wants to streamline the tax calculation
-process for employees under the New Tax Regime (2023). They’ve decided to build a tax calculation program that computes salaries, taxes, and net incomes while ensuring compliance with the latest tax
-laws.As a software developer in GlobalNext’s HR-Tech team, you are tasked with developing this program.
-The system should process employee salary details, validate inputs, calculate taxes, and generate detailed reports.
+GlobalNext Solutions, a rapidly growing IT company, employs a diverse workforce ranging from entrylevel developers to senior executives. 
+The HR department wants to streamline the tax calculation process for employees under the New Tax Regime (2023). They’ve decided to build 
+a tax calculation program that computes salaries, taxes, and net incomes while ensuring compliance with the latest tax laws.As a software 
+developer in GlobalNext’s HR-Tech team, you are tasked with developing this program.The system should process employee salary details, 
+validate inputs, calculate taxes, and generate detailed reports.
 Objectives
 The program should:
 1. Accept employee details, including monthly salary components.
@@ -27,21 +28,21 @@ o Annual Gross Salary = (Gross Monthly Salary × 12) + Bonus
 Output:
 o Display the employee details, gross monthly salary, and annual gross salary
 
-print("-------LEVEL-1 BASIC INPUT AND SALARY CALCULATION-------")
-Name=input("Enter the name of the employee: ")
-EmpID=input("Enter the employee ID: ")
-Basic_Monthly_Salary=int(input("Enter the monthly salary of the employee: "))
-Special_Allowances=int(input("Enter the special allowances (monthly): "))
-Gross_Monthly_Salary = Basic_Monthly_Salary + Special_Allowances
-print(f"Gross monthly salary of the employee is: {Gross_Monthly_Salary}")
-Bonus_Percentage=float(input("Provide the bonus percentage of the employeee: "))
-Bonus=Gross_Monthly_Salary*(Bonus_Percentage/100)
-Annual_Bonus=Bonus*12
-Annual_Gross_Salary = (Gross_Monthly_Salary * 12) + Annual_Bonus
-print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
-print(f"\t EMPLOYEE DETAILS: \n\t Name: {Name} \n\t EmployeeID: {EmpID} \n\t Basic Salary: {Basic_Monthly_Salary} \n\t 
-      Special allowance: {Special_Allowances} \n\t Gross Monthly Salary: {Gross_Monthly_Salary} \n\t Bonus percentage: 
-      {Bonus_Percentage} \n\t Annual Gross Salary: {Annual_Gross_Salary} \n\t")
+            print("-------LEVEL-1 BASIC INPUT AND SALARY CALCULATION-------")
+            Name=input("Enter the name of the employee: ")
+            EmpID=input("Enter the employee ID: ")
+            Basic_Monthly_Salary=int(input("Enter the monthly salary of the employee: "))
+            Special_Allowances=int(input("Enter the special allowances (monthly): "))
+            Gross_Monthly_Salary = Basic_Monthly_Salary + Special_Allowances
+            print(f"Gross monthly salary of the employee is: {Gross_Monthly_Salary}")
+            Bonus_Percentage=float(input("Provide the bonus percentage of the employeee: "))
+            Bonus=Gross_Monthly_Salary*(Bonus_Percentage/100)
+            Annual_Bonus=Bonus*12
+            Annual_Gross_Salary = (Gross_Monthly_Salary * 12) + Annual_Bonus
+            print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+            print(f"\t EMPLOYEE DETAILS: \n\t Name: {Name} \n\t EmployeeID: {EmpID} \n\t Basic Salary: {Basic_Monthly_Salary} \n\t 
+                  Special allowance: {Special_Allowances} \n\t Gross Monthly Salary: {Gross_Monthly_Salary} \n\t Bonus percentage: 
+                  {Bonus_Percentage} \n\t Annual Gross Salary: {Annual_Gross_Salary} \n\t")
 
 
 Level 2: Taxable Income Calculation
@@ -51,11 +52,11 @@ Tasks:
 • Compute the Taxable Income and display all intermediate calculations.
 Output: Display gross salary, standard deduction and taxable income.
 
-print("-------Level-2 TAXABLE INCOME CALCULATION-------")
-print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
-print("Standard deduction of Rs.50000 on the Annual Gross Salary is applied")
-Taxable_Income=Annual_Gross_Salary-50000
-print(f"Annual Gross salary of the employee after tax deduction is: {Taxable_Income}")
+            print("-------Level-2 TAXABLE INCOME CALCULATION-------")
+            print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+            print("Standard deduction of Rs.50000 on the Annual Gross Salary is applied")
+            Taxable_Income=Annual_Gross_Salary-50000
+            print(f"Annual Gross salary of the employee after tax deduction is: {Taxable_Income}")
 
 
 Level 3: Tax and Rebate Calculation
@@ -74,65 +75,180 @@ o Taxable income ≤ ₹7,00,000 → 100% rebate (tax payable = ₹0).
 Output:
 • Display a detailed tax breakdown, including slabs, cess, and total tax payable.
 
-print("-------LEVEL-1 BASIC INPUT AND SALARY CALCULATION-------")
-Name=input("Enter the name of the employee: ")
-EmpID=input("Enter the employee ID: ")
-Basic_Monthly_Salary=int(input("Enter the monthly salary of the employee: "))
-Special_Allowances=int(input("Enter the special allowances (monthly): "))
-Gross_Monthly_Salary = Basic_Monthly_Salary + Special_Allowances
-print(f"Gross monthly salary of the employee is: {Gross_Monthly_Salary}")
-Bonus_Percentage=float(input("Provide the bonus percentage of the employeee: "))
-Bonus=Gross_Monthly_Salary*(Bonus_Percentage/100)
-Annual_Bonus=Bonus*12
-Annual_Gross_Salary = (Gross_Monthly_Salary * 12) + Annual_Bonus
-print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
-print(f"\t EMPLOYEE DETAILS: \n\t Name: {Name} \n\t EmployeeID: {EmpID} \n\t Basic Salary: {Basic_Monthly_Salary} \n\t 
-      Special allowance: {Special_Allowances} \n\t Gross Monthly Salary: {Gross_Monthly_Salary} \n\t Bonus percentage: 
-      {Bonus_Percentage} \n\t Annual Gross Salary: {Annual_Gross_Salary} \n\t")
+            print("-------Level-3 TAX AND REBATE CALCULATION-------")
+            print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+            if(Annual_Gross_Salary>=1500000):
+                print("Tax applied is 30%")
+                Taxable_amount=(30/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            elif(Annual_Gross_Salary>=1200001 and Annual_Gross_Salary<=1500000):
+                print("Tax applied is 20%")
+                Taxable_amount=(20/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            elif(Annual_Gross_Salary>=900001 and Annual_Gross_Salary<=1200000):
+                print("Tax applied is 15%")
+                Taxable_amount=(15/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            elif(Annual_Gross_Salary>=600001 and Annual_Gross_Salary<=900000):
+                print("Tax applied is 10%")
+                Taxable_amount=(10/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            elif(Annual_Gross_Salary>=300001 and Annual_Gross_Salary<=600000):
+                print("Tax applied is 5%")
+                Taxable_amount=(5/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            elif(Annual_Gross_Salary>=0 and Annual_Gross_Salary<=300000):
+                print("Tax applied is 0%")
+                Taxable_amount=(0/100)*Annual_Gross_Salary
+                print(f"Taxable amount is: {Taxable_amount}")
+            else:
+                print("Incorrect amount")
+            print("APPLYING SECTION 87A REBATE") 
+            Salary_after_tax=Annual_Gross_Salary-Taxable_amount
+            print(f"Salary after tax: {Salary_after_tax}")
+            if(Salary_after_tax<=700000):
+                print("100% Rebate - No tax applied")
+                Rebated_amount=Annual_Gross_Salary
+                print(f"Amount after rebate is: {Rebated_amount}")
+            else:
+                print(f"Taxable amount without rebate is: {Taxable_amount}")
+            print("APPLYING HEALTH AND EDUCATION CESS")
+            Total_tax_payable=(Salary_after_tax or Rebated_amount)*(4/100)
+            print(f"Final tax payable is {Total_tax_payable}")
 
-print("-------Level-2 TAXABLE INCOME CALCULATION-------")
-print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
-print("Standard deduction of Rs.50000 on the Annual Gross Salary is applied")
-Taxable_Income=Annual_Gross_Salary-50000
-print(f"Annual Gross salary of the employee after tax deduction is: {Taxable_Income} \n")
 
-print("-------Level-3 TAX AND REBATE CALCULATION-------")
-print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
-if(Annual_Gross_Salary>=1500000):
-    print("Tax applied is 30%")
-    Taxable_amount=(30/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-elif(Annual_Gross_Salary>=1200001 and Annual_Gross_Salary<=1500000):
-    print("Tax applied is 20%")
-    Taxable_amount=(20/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-elif(Annual_Gross_Salary>=900001 and Annual_Gross_Salary<=1200000):
-    print("Tax applied is 15%")
-    Taxable_amount=(15/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-elif(Annual_Gross_Salary>=600001 and Annual_Gross_Salary<=900000):
-    print("Tax applied is 10%")
-    Taxable_amount=(10/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-elif(Annual_Gross_Salary>=300001 and Annual_Gross_Salary<=600000):
-    print("Tax applied is 5%")
-    Taxable_amount=(5/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-elif(Annual_Gross_Salary>=0 and Annual_Gross_Salary<=300000):
-    print("Tax applied is 0%")
-    Taxable_amount=(0/100)*Annual_Gross_Salary
-    print(f"Taxable amount is: {Taxable_amount}")
-else:
-    print("Incorrect amount")
-print("APPLYING SECTION 87A REBATE") 
-Salary_after_tax=Annual_Gross_Salary-Taxable_amount
-print(f"Salary after tax: {Salary_after_tax}")
-if(Salary_after_tax<=700000):
-    print("100% Rebate - No tax applied")
-    Rebated_amount=Annual_Gross_Salary
-    print(f"Amount after rebate is: {Rebated_amount}")
-else:
-    print(f"Taxable amount without rebate is: {Taxable_amount}")
-print("APPLYING HEALTH AND EDUCATION CESS")
-Total_tax_payable=(Salary_after_tax or Rebated_amount)*(4/100)
-print(f"Final tax payable is {Total_tax_payable}")
+Level 4: Net Salary Calculation
+Objective: Calculate annual net salary after tax deductions.
+Tasks:
+1. Compute Net Salary = Annual Gross Salary- Total Tax Payable.
+2. Display:
+o Annual Gross Salary
+o Total Tax Payable (including cess)
+o Annual Net Salary
+
+            print("-------Level-4 NET SALARY CALCULATION-------")
+            print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+            print(f"Final tax payable is {Total_tax_payable}")
+            Annual_Net_Salary=Annual_Gross_Salary-Total_tax_payable
+            print(f"Annual Net salary of the employee is: {Annual_Net_Salary}")
+
+
+Level 5: Report Generation
+Objective: Generate a detailed report for employees.
+Tasks:
+1. Summarize all computed details:
+o Employee Details (Name, EmpID)
+o Gross Monthly Salary
+o Annual Gross Salary
+o Taxable Income
+o Tax Payable (with breakdown)
+o Annual Net Salary
+2. Format the output as a report for better readability.
+Output:
+• Provide a clean, tabular report for employees.
+Example Output (For Reports Level)
+Employee Tax Report
+Field Details
+Name John Doe
+EmpID E12345
+Gross Monthly Salary ₹85,000
+Annual Gross Salary ₹10,20,000
+Taxable Income ₹9,70,000
+Tax Payable ₹76,800
+Annual Net Salary ₹9,43,200
+
+            print("-------Level-5 REPORT GENERATION-------")
+            print("             EMPLOYEE TAX REPORT             ")
+            print("---------------------------------------------")
+            print(f"Name:                {Name}")
+            print(f"EmployeeID:          {EmpID}")
+            print(f"Basic Salary:        {Basic_Monthly_Salary}")
+            print(f"Special allowance:   {Special_Allowances}")
+            print(f"Gross Monthly Salary:{Gross_Monthly_Salary}") 
+            print(f"Bonus percentage:    {Bonus_Percentage}") 
+            print(f"Annual Gross Salary: {Annual_Gross_Salary}")  
+            print(f"Final tax payable:   {Total_tax_payable}")  
+            print(f"Annual Net salary:   {Annual_Net_Salary}")  
+
+
+                        print("-------LEVEL-1 BASIC INPUT AND SALARY CALCULATION-------")
+                        Name=input("Enter the name of the employee: ")
+                        EmpID=input("Enter the employee ID: ")
+                        Basic_Monthly_Salary=int(input("Enter the monthly salary of the employee: "))
+                        Special_Allowances=int(input("Enter the special allowances (monthly): "))
+                        Gross_Monthly_Salary = Basic_Monthly_Salary + Special_Allowances
+                        print(f"Gross monthly salary of the employee is: {Gross_Monthly_Salary}")
+                        Bonus_Percentage=float(input("Provide the bonus percentage of the employeee: "))
+                        Bonus=Gross_Monthly_Salary*(Bonus_Percentage/100)
+                        Annual_Bonus=Bonus*12
+                        Annual_Gross_Salary = (Gross_Monthly_Salary * 12) + Annual_Bonus
+                        print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+                        print(f"\t EMPLOYEE DETAILS: \n\t Name: {Name} \n\t EmployeeID: {EmpID} \n\t Basic Salary: {Basic_Monthly_Salary} \n\t 
+                              Special allowance: {Special_Allowances} \n\t Gross Monthly Salary: {Gross_Monthly_Salary} \n\t Bonus percentage:  
+                              {Bonus_Percentage} \n\t Annual Gross Salary: {Annual_Gross_Salary} \n\t")
+                        
+                        print("-------Level-2 TAXABLE INCOME CALCULATION-------")
+                        print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+                        print("Standard deduction of Rs.50000 on the Annual Gross Salary is applied")
+                        Taxable_Income=Annual_Gross_Salary-50000
+                        print(f"Annual Gross salary of the employee after tax deduction is: {Taxable_Income} \n")
+                        
+                        print("-------Level-3 TAX AND REBATE CALCULATION-------")
+                        print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+                        if(Annual_Gross_Salary>=1500000):
+                            print("Tax applied is 30%")
+                            Taxable_amount=(30/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        elif(Annual_Gross_Salary>=1200001 and Annual_Gross_Salary<=1500000):
+                            print("Tax applied is 20%")
+                            Taxable_amount=(20/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        elif(Annual_Gross_Salary>=900001 and Annual_Gross_Salary<=1200000):
+                            print("Tax applied is 15%")
+                            Taxable_amount=(15/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        elif(Annual_Gross_Salary>=600001 and Annual_Gross_Salary<=900000):
+                            print("Tax applied is 10%")
+                            Taxable_amount=(10/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        elif(Annual_Gross_Salary>=300001 and Annual_Gross_Salary<=600000):
+                            print("Tax applied is 5%")
+                            Taxable_amount=(5/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        elif(Annual_Gross_Salary>=0 and Annual_Gross_Salary<=300000):
+                            print("Tax applied is 0%")
+                            Taxable_amount=(0/100)*Annual_Gross_Salary
+                            print(f"Taxable amount is: {Taxable_amount}")
+                        else:
+                            print("Incorrect amount")
+                        print("APPLYING SECTION 87A REBATE") 
+                        Salary_after_tax=Annual_Gross_Salary-Taxable_amount
+                        print(f"Salary after tax: {Salary_after_tax}")
+                        if(Salary_after_tax<=700000):
+                            print("100% Rebate - No tax applied")
+                            Rebated_amount=Annual_Gross_Salary
+                            print(f"Amount after rebate is: {Rebated_amount}")
+                        else:
+                            print(f"Taxable amount without rebate is: {Taxable_amount}")
+                        print("APPLYING HEALTH AND EDUCATION CESS")
+                        Total_tax_payable=(Salary_after_tax or Rebated_amount)*(4/100)+Taxable_amount
+                        print(f"Final tax payable is {Total_tax_payable} \n")
+                        
+                        print("-------Level-4 NET SALARY CALCULATION-------")
+                        print(f"Annual Gross salary of the employee is: {Annual_Gross_Salary}")
+                        print(f"Final tax payable is {Total_tax_payable}")
+                        Annual_Net_Salary=Annual_Gross_Salary-Total_tax_payable
+                        print(f"Annual Net salary of the employee is: {Annual_Net_Salary} \n")
+                        
+                        print("-------Level-5 REPORT GENERATION-------")
+                        print("             EMPLOYEE TAX REPORT             ")
+                        print("---------------------------------------------")
+                        print(f"Name:                {Name}")
+                        print(f"EmployeeID:          {EmpID}")
+                        print(f"Basic Salary:        {Basic_Monthly_Salary}")
+                        print(f"Special allowance:   {Special_Allowances}")
+                        print(f"Gross Monthly Salary:{Gross_Monthly_Salary}") 
+                        print(f"Bonus percentage:    {Bonus_Percentage}") 
+                        print(f"Annual Gross Salary: {Annual_Gross_Salary}")  
+                        print(f"Final tax payable:   {Total_tax_payable}")  
+                        print(f"Annual Net salary:   {Annual_Net_Salary}")  
