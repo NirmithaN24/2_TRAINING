@@ -1,3 +1,14 @@
-print("Nirmitha N")
-name = 'Nirmitha N'
-print(f"Hi my name is {name}")
+1. print("Nirmitha N")
+   name = 'Nirmitha N'
+   print(f"Hi my name is {name}")
+
+
+2. name = input("Enter your name: ")
+   if (len(name)>6):
+       print(f"Hi my name is {name}")
+   else:
+       print("Invalid name")
+
+
+3.  name = input("Enter your name: ")
+    print("Hi my name is ",name if len(name)>6 else 'Invalid name')
