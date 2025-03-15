@@ -1,50 +1,157 @@
 1. Create and access dictionary: Create a dictionary with personal details and access values
 
-student_details = {
-    'name': 'Nirmitha N',
-    'age': 20,
-    'gender': 'Female',
-    'email': 'vvce22ec0188@vvce.ac.in',
-    'marks': 93
-}
-print("Name:", student_details['name'])
-print("Age:", student_details['age'])
-print("Gender:", student_details['gender'])
-print("Email:", student_details['email'])
-print("Marks:", student_details['marks'])
+        student_details = {
+            'name': 'Nirmitha N',
+            'age': 20,
+            'gender': 'Female',
+            'email': 'vvce22ec0188@vvce.ac.in',
+            'marks': 93
+        }
+        print("Name:", student_details['name'])
+        print("Age:", student_details['age'])
+        print("Gender:", student_details['gender'])
+        print("Email:", student_details['email'])
+        print("Marks:", student_details['marks'])
 
 2. Modify a Dictionary: Add a new key-value pair, update an existing key, and delete a key.
 
-student_details = {
-    'name': 'Nirmitha N',
-    'age': 20,
-    'gender': 'Female',
-    'email': 'vvce22ec0188@vvce.ac.in',
-    'marks': 93
-}
-student_details['ID'] = '4VV22EC106'
-print(f"After adding ID:")
-for key, value in student_details.items():
-    print(f"{key}: {value}")
-print("\n")
-student_details['marks'] = 90 
-print(f"After updating marks:")
-for key, value in student_details.items():
-    print(f"{key}: {value}")
-print("\n")
-del student_details['email']  
-print(f"After deleting email:")
-for key, value in student_details.items():
-    print(f"{key}: {value}")
+        student_details = {
+            'name': 'Nirmitha N',
+            'age': 20,
+            'gender': 'Female',
+            'email': 'vvce22ec0188@vvce.ac.in',
+            'marks': 93
+        }
+        student_details['ID'] = '4VV22EC106'
+        print(f"After adding ID:")
+        for key, value in student_details.items():
+            print(f"{key}: {value}")
+        print("\n")
+        student_details['marks'] = 90 
+        print(f"After updating marks:")
+        for key, value in student_details.items():
+            print(f"{key}: {value}")
+        print("\n")
+        del student_details['email']  
+        print(f"After deleting email:")
+        for key, value in student_details.items():
+            print(f"{key}: {value}")
 
 3. Loop Through a Dictionary: Print all keys and values using a loop.
 
-student_details = {
-    'name': 'Nirmitha N',
-    'age': 20,
-    'gender': 'Female',
-    'email': 'vvce22ec0188@vvce.ac.in',
-    'marks': 93
-}
-for key, value in student_details.items():
-    print(f"{key} : {value}")
+        student_details = {
+            'name': 'Nirmitha N',
+            'age': 20,
+            'gender': 'Female',
+            'email': 'vvce22ec0188@vvce.ac.in',
+            'marks': 93
+        }
+        for key, value in student_details.items():
+            print(f"{key} : {value}")
+
+4. Check If a Key Exists: Write a function to check if a given key exists in a dictionary.
+
+        def check_key_exists(dictionary, key):
+            if key in dictionary:
+                return True
+            else:
+                return False
+        student_details = {
+            'name': 'Nirmitha N',
+            'age': 20,
+            'gender': 'Female',
+            'email': 'vvce22ec0188@vvce.ac.in',
+            'marks': 93
+        }
+        key_to_check = 'email'
+        if check_key_exists(student_details, key_to_check):
+            print(f"The key '{key_to_check}' exists in the dictionary.")
+        else:
+            print(f"The key '{key_to_check}' does not exist in the dictionary.")
+        
+        key_to_check = 'zipcode'
+        if check_key_exists(student_details, key_to_check):
+            print(f"The key '{key_to_check}' exists in the dictionary.")
+        else:
+            print(f"The key '{key_to_check}' does not exist in the dictionary.")
+
+5. Merge Two Dictionaries: Combine two dictionaries into one.
+
+        dict1 = {
+            'name': 'Nirmitha N',
+            'age': 20
+        }
+        dict2 = {
+            'gender': 'Female',
+            'email': 'vvce22ec0188@vvce.ac.in'
+        }
+        dict1.update(dict2)
+        print("Merged Dictionary:")
+        print(dict1)
+
+6. Dictionary Comprehension: Generate a dictionary with numbers as keys and squares as values.
+
+        squares_dict = {x: x**2 for x in range(1, 11)}
+        print(squares_dict)
+
+7. Word Frequency Counter: Count the frequency of words in a string using a dictionary.
+
+        def word_frequency(text):
+            words = text.lower().split()
+            word_count = {}
+            for word in words:
+                if word in word_count:
+                    word_count[word] += 1
+                else:
+                    word_count[word] = 1
+            return word_count
+        text = "This is a test. This is only a test."
+        result = word_frequency(text)
+        print(result)
+
+8. Sort a Dictionary by Value: Sort a dictionary in descending order based on values.
+
+        person_details = {
+            'John': 50,
+            'Alice': 40,
+            'Bob': 60,
+            'Diana': 45
+        }
+        sorted_dict = dict(sorted(person_details.items(), key=lambda item: item[1], reverse=True))
+        print(sorted_dict)
+
+9. Convert Lists to Dictionary: Convert two lists (keys & values) into a dictionary.
+
+        keys = ['name', 'age', 'gender', 'email']
+        values = ['John Doe', 30, 'Male', 'johndoe@example.com']
+        person_details = dict(zip(keys, values))
+        print(person_details)
+
+10. Nested Dictionary: Access and modify elements in a nested dictionary.
+
+        person_details = {
+            'name': 'John Doe',
+            'age': 30,
+            'address': {
+                'street': '123 Main St',
+                'city': 'Springfield',
+                'state': 'IL',
+                'zip': '62701'
+            },
+            'contacts': {
+                'email': 'johndoe@example.com',
+                'phone': '555-1234'
+            }
+        }
+        print("Name:", person_details['name'])
+        print("Street:", person_details['address']['street'])
+        print("City:", person_details['address']['city'])
+        print("Phone:", person_details['contacts']['phone'])
+        
+        person_details['age'] = 31 
+        person_details['address']['city'] = 'Chicago' 
+        person_details['contacts']['email'] = 'john.doe@newemail.com'  
+        
+        print("\nUpdated Dictionary:")
+        for key, value in person_details.items():
+            print(f"{key}: {value}")
