@@ -1,1 +1,35 @@
+1️. Basic Lambda: Create a lambda function to add two numbers.
+
+
+
+2️. Lambda with map(): Use map() and a lambda function to square a list of numbers.
+
+
+
+3️. Lambda with filter(): Use filter() to extract even numbers from a list.
+
+
+
+4️. Lambda with sorted(): Sort a list of tuples based on the second element using a lambda function.
+
+
+
+5️. Conditional Lambda: Write a lambda function to return the maximum of two numbers.
+
+
+
+6️. Lambda in a Function: Write a function that returns a lambda to multiply by a given number.
+
+
+
+7️. Lambda with reduce(): Use reduce() and a lambda function to calculate the product of a list.
+
+
+
+8️. Lambda in List Comprehension: Apply a lambda function inside a list comprehension to double elements.
+
+
+
+9. Lambda with Dictionary Sorting: Sort a dictionary by values using a lambda function.
+
 
