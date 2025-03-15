@@ -1,0 +1,50 @@
+1. Create and access dictionary: Create a dictionary with personal details and access values
+
+student_details = {
+    'name': 'Nirmitha N',
+    'age': 20,
+    'gender': 'Female',
+    'email': 'vvce22ec0188@vvce.ac.in',
+    'marks': 93
+}
+print("Name:", student_details['name'])
+print("Age:", student_details['age'])
+print("Gender:", student_details['gender'])
+print("Email:", student_details['email'])
+print("Marks:", student_details['marks'])
+
+2. Modify a Dictionary: Add a new key-value pair, update an existing key, and delete a key.
+
+student_details = {
+    'name': 'Nirmitha N',
+    'age': 20,
+    'gender': 'Female',
+    'email': 'vvce22ec0188@vvce.ac.in',
+    'marks': 93
+}
+student_details['ID'] = '4VV22EC106'
+print(f"After adding ID:")
+for key, value in student_details.items():
+    print(f"{key}: {value}")
+print("\n")
+student_details['marks'] = 90 
+print(f"After updating marks:")
+for key, value in student_details.items():
+    print(f"{key}: {value}")
+print("\n")
+del student_details['email']  
+print(f"After deleting email:")
+for key, value in student_details.items():
+    print(f"{key}: {value}")
+
+3. Loop Through a Dictionary: Print all keys and values using a loop.
+
+student_details = {
+    'name': 'Nirmitha N',
+    'age': 20,
+    'gender': 'Female',
+    'email': 'vvce22ec0188@vvce.ac.in',
+    'marks': 93
+}
+for key, value in student_details.items():
+    print(f"{key} : {value}")
